@@ -5,8 +5,6 @@ const scissor = document.querySelector(".scissor");
 let cpuScore = document.querySelector(".computer-score");
 let userScore = document.querySelector(".user-score");
 
-let choices = document.querySelectorAll(".choiceBtn");
-
 let scoreForUser=0;
 let scoreForCpu=0;
 
@@ -34,9 +32,6 @@ function winningPattern(userChoice,cpuChoice){
         winnerUser();
     }
 }
-
-
-
 
     rock.addEventListener('click', e=>{
         let userChoice = 1;
