@@ -1,6 +1,6 @@
 const dropDownSelects = document.querySelectorAll("select");
 const btn = document.querySelector(".submit-btn");
-
+submitResults(btn);
 
 for(let selectOptions of dropDownSelects){
     for(let currencyKey in countryList){
@@ -28,7 +28,9 @@ const updateFlag = (element)=>{
     img.src = newSrc;
 }
 
-btn.addEventListener("click",(evt)=>{
+
+function submitResults(btn){
+    btn.addEventListener("click",(evt)=>{
     evt.preventDefault();
     let msg = document.querySelector(".input-error-msg");
     let input = document.querySelector("input");
@@ -46,9 +48,11 @@ btn.addEventListener("click",(evt)=>{
     }
     if(amount!=="" && amount >0){
         getData(amount,msg);
-    }
+        }
 
-});
+    });
+}
+
 
 
 async function getData(amount){
@@ -70,6 +74,27 @@ async function getData(amount){
                 }
             }
         }
-
-        }
+    }
 }
+
+function swapCountry(){
+
+    let temp = dropDownSelects[0].value;
+    dropDownSelects[0].value = dropDownSelects[1].value;
+    dropDownSelects[1].value = temp;
+
+    updateFlag(dropDownSelects[0]);
+    updateFlag(dropDownSelects[1]);
+
+    submitResults(swapIcon);
+
+//    let input = document.querySelector("input");
+//    let amount = input.value.trim();
+//    getData(amount);
+
+}
+
+let swapIcon = document.querySelector(".exchange-icon");
+swapIcon.addEventListener("click",(evt)=>{
+        swapCountry();
+    });
