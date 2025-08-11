@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #2c3e50, #db9a3463);
+    color: #fff;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0rem;
+}
+.header {
+    background-color: rgba(0, 0, 0, 0.18);
+    padding: 1.25rem;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.2);
+}
+
+.header-heading {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.9375rem;
+    padding: 1.875rem;
+    box-shadow: 0 0 0.9375rem rgba(0, 0, 0, 0.3);
+    }
+
+.amount-container {
+    margin-bottom: 1.25rem;
+}
+
+.amount-heading{
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.input-container {
+    width: 100%;
+    padding: 0.625rem;
+    border: none;
+    border-radius: 0.625rem;
+    font-size: 1rem;
+    outline: none;
+}
+.input-error-msg {
+      color: #e6ff00ab;
+      font-size: 14px;
+      margin-left: 10px;
+    }
+
+.drop-down-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5625rem 0;
+    gap: 1.25rem;
+}
+
+.from-drop-down-options,
+.to-drop-down-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.from-options-container,
+.to-options-container {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-top: 0.3125rem;
+}
+
+select {
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+img {
+    width: 2.5rem;
+    height: auto;
+}
+
+.exchange-icon {
+    font-size: 1.5rem;
+    color: #fff;
+    cursor : pointer;
+}
+
+.message-container {
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+.msg {
+    font-size: 1.1rem;
+    color: black;
+    font-weight:bold;
+    box-shadow: -5px 7px 13px 1px #605d5dc9;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 0.625rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #219150; 

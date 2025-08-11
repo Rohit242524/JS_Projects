@@ -1,0 +1,147 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    color:white;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding:2rem;
+
+}
+.image-container{
+    background-image: url("./wolfgang-hasselmann-xXRmqz7KlJg-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 18rem;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.time-container{
+    height: 1rem;
+    padding: 1rem;;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:5rem;
+}
+.time{
+    font-size:2.5rem;
+}
+.functions-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.reset-container,.store-container,.playPause-container{
+    height: 4rem;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reset,.store{
+    height: 2.5rem;
+    width: 2.5rem;
+    border: 0.15rem solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.reset-icon,.store-icon{
+    height: 1rem;
+    width: 1rem;
+}
+
+.play-icon,.pause-icon{
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+
+.play,.pause{
+    height: 4rem;
+    width: 4rem;
+    background-color: #DF6029;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.pause{
+    display: none;
+}
+
+    /*tablet*/
+@media (min-width: 30rem) and (max-width: 63.9375rem) {
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+
+        padding:3rem;
+    }
+    .image-container{
+        width: 42rem;
+        display: flex;
+        gap: 2rem;
+        height: 20rem;
+    }
+    .time-container{
+        height: 5rem;
+    }
+    .time{
+        font-size: 5rem;
+    }
+    .functions-container{
+        gap:2rem;
+    }
+}
+
+
+/* Laptop */
+@media (min-width: 64rem) and (max-width:160rem) {
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding:2rem;
+    }
+    .image-container{
+        width: 42rem;
+        display: flex;
+        gap: 6rem;
+        width: 120rem;
+        height: 50rem;
+    }
+    .time-container{
+        height: 5rem;
+    }
+    .time{
+        font-size: 5rem;
+    }
+    .functions-container{
+        gap:4rem;
+    }
+
+}

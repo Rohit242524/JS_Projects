@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CurrencyConvertor</title>
+    <link rel="stylesheet" href="./templates/styles.css"">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+          integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="header">
+        <h2 class="header-heading">Currency Convertor</h2>
+    </header>
+
+    <main class="main">
+        <form>
+            <div class="form-container">
+                <div class="amount-container">
+                    <p class="amount-heading">Enter amount</p>
+                    <input type="number" placeholder="Enter amount" class="input-container"  required>
+                    <span class="input-error-msg"></span>
+                </div>
+                <div class="drop-down-container">
+                    <div class="from-drop-down-options">
+                        <p class="from-heading">From</p>
+                        <div class="from-options-container">
+                            <img src="https://flagsapi.com/FR/flat/64.png" class="from-country-images ">
+                            <select name="from" class="from-select"></select>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right-arrow-left exchange-icon"></i>
+                    <div class="to-drop-down-options">
+                        <p class="to-heading">To</p>
+                        <div class="to-options-container">
+                            <img src="https://flagsapi.com/IN/flat/64.png" class="to-country-images">
+                            <select name="to" class="to-select"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="message-container">
+                    <p class="msg"></p>
+                </div>
+                <button class="submit-btn">Convert</button>
+            </div>
+        </form>
+    </main>
+    <script src="./templates/country.js"></script>
+    <script src="./templates/script.js"></script>
+</body>
+</html>
