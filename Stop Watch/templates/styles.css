@@ -53,6 +53,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 .reset,.store{
     height: 2.5rem;
@@ -84,10 +85,20 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
 }
 .pause{
     display: none;
+}
+
+
+.playPause-container,.store-container,.reset-container{
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.playPause-container:hover,.store-container:hover,.reset-container:hover{
+    transform: scale(1.2);
+}
+.playPause-container:active,.store-container:active,.reset-container:active{
+    transform: scale(0.95);
 }
 
     /*tablet*/
@@ -128,17 +139,41 @@ body{
         padding:2rem;
     }
     .image-container{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
         width: 42rem;
         display: flex;
-        gap: 6rem;
-        width: 120rem;
-        height: 50rem;
+        gap: 3rem;
+        width: 40rem;
+        height: 25rem;
     }
     .time-container{
         height: 5rem;
     }
     .time{
-        font-size: 5rem;
+        font-size: 5rem;    
+    }
+    .reset,.store{
+        height: 4rem;
+        width: 4rem;
+    }
+    .reset-icon,.store-icon{
+        height: 1.3rem;
+        width: 1.3rem;
+    }
+    .play-icon,.pause-icon{
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+
+    .playPause-container{
+        height: 5.5rem;
+        width: 5.5rem;
+    }
+    .playPause {
+        height: 5.5rem;
+        width: 5.5rem;
     }
     .functions-container{
         gap:4rem;
