@@ -52,7 +52,6 @@ function stopWatch(element){
             let sec = Math.floor((totalTime % (1000 * 60)) / 1000);
             let ms  = totalTime % 1000;
             time.innerText=`${min}:${sec}:${ms}`;
-                
         },1);
     }
     
@@ -73,7 +72,7 @@ function stopWatch(element){
         let min = Math.floor(totalTime / (1000 * 60));
         let sec = Math.floor((totalTime % (1000 * 60)) / 1000);
         let ms  = totalTime % 1000;
-        
+
         let displayTime = {
             Minutes:min,
             Seconds:sec,
