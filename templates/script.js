@@ -17,3 +17,28 @@ for (const icon of icons) {
 
   });
 }
+
+
+/*darkmode*/
+
+const switchDark = document.querySelector(".nightMode-container");
+
+console.log(switchDark.classList);
+
+switchDark.addEventListener("click",()=>{
+  switchDark.classList.toggle(".night-mode");
+  
+  if(switchDark.classList.contains(".night-mode")){
+    localStorage.setItem("theme","dark");
+  }else{
+    localStorage.setItem("theme","light");
+  }
+
+  if(localStorage.getItem("theme")==="dark"){
+    document.body.classList.add("night-mode");
+  }else{
+    document.body.classList.remove("night-mode");
+  }
+
+});
+

@@ -8,6 +8,10 @@
 body{
     background-color: #F3F4F6;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
 
 .container{
     display: flex;
@@ -26,7 +30,7 @@ body{
 .header{
     width:19rem;
     display: flex;
-    justify-content:space-between;
+    justify-content:space-between;  
 }
 
 .logo-container{
@@ -47,12 +51,58 @@ body{
     padding: 0.5rem;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 0.6rem;
+
 }
 .mail-container,.github-container,.linkedIn-container{
     width: 1rem;
     height: 1rem;
+    cursor: pointer;
 }
+.nightMode-container{
+    width: 1.3rem;
+    height: 1.3rem;
+    cursor: pointer;
+}
+
+.projects-container{
+    display: grid;
+    grid-template-columns: 19rem;
+    grid-template-rows: 3rem 3rem 3rem;
+    justify-content:center;
+    align-items: center;
+    justify-items: center;
+    padding: 2rem;
+    gap: 2rem;
+}
+.list{
+    text-align: center;
+    padding: 1rem 2rem;
+
+}
+
+.project{
+    width: 19rem;
+    background-color: white ;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px 0.1px rgba(196, 196, 187, 0.7);
+    cursor: pointer;
+    background-color:white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+.project:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+}
+
+.project:active {
+    transform: scale(0.95);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
 
 
         /*Tablet*/
@@ -83,10 +133,17 @@ body{
         gap: 1rem;
     }
     .mail-container,.github-container,.linkedIn-container{
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+    .nightMode-container{
+        width: 2rem;
+        height: 2rem;
     }
 
+    .projects-container{
+        grid-template-columns: 20rem 20rem ;
+    }
 }
 
 
@@ -99,7 +156,7 @@ body{
         padding: 2.5rem;
     }
     .header{
-        width:90rem;
+        width:120rem;
     }
 
     .logo-container{
@@ -116,10 +173,49 @@ body{
         padding: 1rem;
         justify-content: center;
         align-items: center;
-        gap: 1rem;
+        gap: 2rem;
     }
     .mail-container,.github-container,.linkedIn-container{
         width: 1.5rem;
         height: 1.5rem;
     }
+    .nightMode-container{
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .projects-container{
+        grid-template-columns: 30rem 30rem 30rem;
+    }
+    .project{
+        width: 30rem;
+    }
+}
+
+
+        /*darkmode*/
+body.night-mode{
+    background-color: #121212;
+    color: #e0e0e0;
+}
+body.night-mode .header-container {
+  background-color: #1e1e1e;
+}
+
+body.night-mode a {
+  color: #ffffff;
+}
+
+body.night-mode .project {
+  background-color: #1e1e1e;
+  box-shadow: 0 0 10px 0.1px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgb(61, 53, 53);
+}
+
+body.night-mode .project:hover {
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+body.night-mode .contact-us-icons {
+  color: rgb(255, 255, 255); 
 }
