@@ -1,221 +1,238 @@
-    /*mobile*/
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #F3F4F6;
+    font-size: 1rem;
 }
-a{
+
+a {
     text-decoration: none;
     color: black;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
-    justify-content:center ;
+    justify-content: center;
     align-items: center;
+    gap: 1.5rem;
+    width: 100%;
 }
-.header-container{
+
+.header-container {
     width: 100%;
     display: flex;
     background-color: #FFFFFF;
-    justify-content:center ;
+    justify-content: center;
     align-items: center;
-    padding: 1rem;
-}
-.header{
-    width:19rem;
-    display: flex;
-    justify-content:space-between;  
+    margin-top: 0;  
+    box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.04); 
 }
 
-.logo-container{
+.header {
+    width: 95%;
+    max-width: 75rem;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap:0.5rem;
+    gap: 0.5rem;
     padding: 0.5rem;
 }
 
-.title{
-    width: 8rem;
+.title {
+    min-width: 6rem;
     font-size: 1rem;
     font-weight: bold;
+    flex-shrink: 0;
 }
-.contact-us-container{
+
+.contact-us-container {
     display: flex;
     padding: 0.5rem;
     justify-content: center;
     align-items: center;
     gap: 0.6rem;
-
 }
-.mail-container,.github-container,.linkedIn-container{
-    width: 1rem;
-    height: 1rem;
+
+.mail-container,
+.github-container,
+.linkedIn-container {
+    width: 1.2rem;
+    height: 1.2rem;
     cursor: pointer;
 }
-.nightMode-container{
+
+.nightMode-container {
     width: 1.3rem;
     height: 1.3rem;
     cursor: pointer;
 }
 
-.projects-container{
+.projects-container {
     display: grid;
-    grid-template-columns: 19rem;
-    grid-template-rows: 3rem 3rem 3rem;
-    justify-content:center;
-    align-items: center;
-    justify-items: center;
-    padding: 2rem;
-    gap: 2rem;
-}
-.list{
-    text-align: center;
+    grid-template-columns: 1fr;
+    gap: 1rem;
     padding: 1rem 2rem;
-
+    width: 100%;
+    max-width: 75rem;
 }
 
-.project{
-    width: 19rem;
-    background-color: white ;
+.list {
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    max-width: 30rem;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.project-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.project-description {
+    font-size: 0.9rem;
+    color: gray;
+}
+
+.project {
+    width: 100%;
+    background-color: white;
     border-radius: 1rem;
-    box-shadow: 0 0 10px 0.1px rgba(196, 196, 187, 0.7);
+    box-shadow: 0 0 0.625rem 0.00625rem rgba(196, 196, 187, 0.7);
     cursor: pointer;
-    background-color:white;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-
 }
 
-.project:hover{
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+.project:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
 }
 
 .project:active {
-    transform: scale(0.95);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(0.97);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 
 
-
-
-        /*Tablet*/
-@media (min-width:30rem) and (max-width:63.9375rem){
-    .container{
+    /*tablet*/
+@media (min-width: 37.5rem) {
+    .header {
+        width: 90%;
+        max-width: 56.25rem;
     }
-    .header-container{
-        padding: 1.5rem;
+    .title {
+        font-size: 1.5rem;
+        min-width: 10rem;
     }
-    .header{
-        width:45rem;
-    }
-
-    .logo-container{
-        gap:1rem;
-        padding: 0.5rem;
-    }
-
-    .title{
-        width: 15rem;
-        font-size: 2rem;
-    }
-    .contact-us-container{
-        display: flex;
-        padding: 1rem;
-        justify-content: center;
-        align-items: center;
+    .contact-us-container {
         gap: 1rem;
+        padding: 1rem;
     }
-    .mail-container,.github-container,.linkedIn-container{
+    .mail-container,
+    .github-container,
+    .linkedIn-container {
         width: 1.6rem;
         height: 1.6rem;
     }
-    .nightMode-container{
+    .nightMode-container {
         width: 2rem;
         height: 2rem;
     }
-
-    .projects-container{
-        grid-template-columns: 20rem 20rem ;
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+    .project {
+        min-width: 0;
     }
 }
 
-
-
-            /*laptop*/
-@media (min-width:64rem){
-     .container{
-    }
-    .header-container{
-        padding: 2.5rem;
-    }
-    .header{
-        width:120rem;
-    }
-
-    .logo-container{
-        gap:1rem;
-        padding: 0.5rem;
-    }
-
-    .title{
-        width: 15rem;
-        font-size: 2rem;
-    }
-    .contact-us-container{
-        display: flex;
-        padding: 1rem;
-        justify-content: center;
-        align-items: center;
+    /*pc*/
+@media (min-width: 64rem) {
+    .container {
         gap: 2rem;
     }
-    .mail-container,.github-container,.linkedIn-container{
+    .header {
+        width: 90%;
+        max-width: 75rem;
+    }
+    .title {
+        font-size: 2rem;
+        min-width: 15rem;
+    }
+    .contact-us-container {
+        gap: 2rem;
+        padding: 1rem;
+    }
+    .mail-container,
+    .github-container,
+    .linkedIn-container {
         width: 1.5rem;
         height: 1.5rem;
     }
-    .nightMode-container{
+    .nightMode-container {
         width: 2rem;
         height: 2rem;
     }
-
-    .projects-container{
-        grid-template-columns: 30rem 30rem 30rem;
+    .main-container {
+        width: 90vw;
+        max-width: 75rem;
+        padding: 0.5rem 1rem;
     }
-    .project{
-        width: 30rem;
+    .projects-container {
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 2rem;
+        padding: 0;
+    }
+    .project {
+        min-width: 0;
     }
 }
 
+    /*large pc*/
+@media (min-width: 87.5rem) {
+    .header,
+    .main-container,
+    .projects-container {
+        max-width: 110rem;
+    }
+}
 
-        /*darkmode*/
-body.night-mode{
+body.night-mode {
     background-color: #121212;
     color: #e0e0e0;
 }
 body.night-mode .header-container {
-  background-color: #1e1e1e;
+    background-color: #1e1e1e;
 }
-
 body.night-mode a {
-  color: #ffffff;
+    color: #ffffff;
 }
-
 body.night-mode .project {
-  background-color: #1e1e1e;
-  box-shadow: 0 0 10px 0.1px rgba(255, 255, 255, 0.1);
-  border: 1px solid rgb(61, 53, 53);
+    background-color: #1e1e1e;
+    box-shadow: 0 0 0.625rem 0.00625rem rgba(255, 255, 255, 0.1);
+    border: 1px solid rgb(61, 53, 53);
 }
-
 body.night-mode .project:hover {
-  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.2);
 }
-
 body.night-mode .contact-us-icons {
-  color: rgb(255, 255, 255); 
+    color: rgb(255, 255, 255);
+}
+body.night-mode .project-description {
+    color: #8c8c8c;
 }
