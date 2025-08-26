@@ -107,18 +107,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
   box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
   cursor: pointer;
 }
 
-.play,.pause{
-  background: #f15086;
-  width:  5.5rem;
-  height: 5.5rem;
-}
-.pause{
-    display: none;
-}
+
 
 .previous-icon,.next-icon{
     width: 1.5rem;
@@ -128,4 +122,25 @@ body {
     width: 2rem;
     height: 2rem;
 }
-y
+.previous,.next{
+   transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+.play,.pause{
+  background: #f15086;
+  width:  5.5rem;
+  height: 5.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+.pause{
+  display: none;
+}
+.previous:hover,.play:hover,.pause:hover,.next:hover{
+    transform: scale(1.05);
+}
+
+.previous:active,.play:active,.pause:active,.next:active {
+    transform: scale(0.95);
+}
