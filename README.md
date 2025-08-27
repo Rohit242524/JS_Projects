@@ -18,7 +18,7 @@ Each project runs in the browser and helps strengthen core JavaScript concepts s
 
 ---
 
-##  Projects
+## Projects
 
 1. **Tic Tac Toe**  
    A classic two-player game where users take turns placing **X** and **O** on a 3×3 grid.  
@@ -42,7 +42,7 @@ Each project runs in the browser and helps strengthen core JavaScript concepts s
 
 ---
 
-##  Prerequisites
+## Prerequisites
 
 - A modern web browser (Chrome, Firefox, Edge, etc.)  
 - Basic knowledge of HTML, CSS, and JavaScript  
@@ -50,16 +50,16 @@ Each project runs in the browser and helps strengthen core JavaScript concepts s
 
 ---
 
-##  Setup Instructions
+## Setup Instructions
 
 ### Clone the repository:
 ```bash
 git clone https://github.com/Rohit242524/JS_PROJECTS.git
 cd JS_PROJECTS
 
----
+```
 
-##  Project Structure
+## Project Structure
 
 JS_PROJECTS/
 ├── CurrencyConvertor/
