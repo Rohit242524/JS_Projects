@@ -60,7 +60,7 @@ cd JS_PROJECTS
 ```
 
 ## Project Structure
-
+```
 JS_PROJECTS/
 ├── CurrencyConvertor/
 │   ├── country.js
@@ -109,5 +109,5 @@ JS_PROJECTS/
 │
 ├── index.html
 └── README.md
-
+```
 
