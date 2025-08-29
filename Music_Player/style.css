@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  margin-top: 3rem;;
+  width: 25rem;
+  background-color: #ffe6f1;
+  border-radius: 1rem;
+  padding: 1.5rem 2rem ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+  gap:2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-go-back,.header-menu{
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+.header-icon,.header-menu-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.song-image {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6px solid white;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+  background-size: cover;
+  background-position: center;
+}
+
+.song-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+}
+
+.song-name {
+  font-size: 1rem;
+  color: #333;
+}
+
+.artist-name {
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 5px;
+}
+
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:2rem;
+}
+
+.song-loaded{
+    padding:1rem;
+}
+.functions-container{
+    display: flex;
+    gap:1.5rem;
+    justify-content: center;
+    align-items: center;
+    padding-bottom:2rem;
+}
+.btn {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+
+
+.previous-icon,.next-icon{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.play-icon,.pause-icon{
+    width: 2rem;
+    height: 2rem;
+}
+.previous,.next{
+   transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+.play,.pause{
+  background: #f15086;
+  width:  5.5rem;
+  height: 5.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+.pause{
+  display: none;
+}
+.previous:hover,.play:hover,.pause:hover,.next:hover{
+    transform: scale(1.05);
+}
+
+.previous:active,.play:active,.pause:active,.next:active {
+    transform: scale(0.95);
+}
