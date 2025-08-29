@@ -21,8 +21,15 @@
 
     const buttons = document.querySelectorAll('.btn');
 
+    const homeIcon = document.querySelector('.home-icon');
+    const githubIcon = document.querySelector('.github-icon');
     
-
+    githubIcon.addEventListener('click',()=>{
+        window.location.href = "https://github.com/Rohit242524/JS_Projects";
+    })
+    homeIcon.addEventListener('click', () => {
+        window.location.href = '/'; 
+    });
 
     let songIndex = 1;
 
