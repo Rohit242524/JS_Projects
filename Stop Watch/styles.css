@@ -9,8 +9,10 @@ body{
 
 .container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2rem;
     min-height: 100vh;
     padding:2rem;
 
@@ -99,6 +101,14 @@ body{
 }
 .playPause-container:active,.store-container:active,.reset-container:active{
     transform: scale(0.95);
+}
+
+.flag-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: black  ;
 }
 
     /*tablet*/

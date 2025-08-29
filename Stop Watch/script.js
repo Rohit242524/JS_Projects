@@ -37,6 +37,7 @@ function stopWatch(element){
         totalTime = 0
         console.log("timer reset",totalTime);
         localStorage.clear();
+        time.innerText=`00:00:00`;
     }
     
     else if(element === playBtn){
@@ -46,13 +47,15 @@ function stopWatch(element){
         startTime = Date.now() - totalTime;
 
         intervalPlay = setInterval(()=>{
+
             totalTime = Date.now() - startTime;
-            console.log("totaltime", totalTime);
             let min = Math.floor(totalTime / (1000 * 60));
             let sec = Math.floor((totalTime % (1000 * 60)) / 1000);
             let ms  = totalTime % 1000;
             time.innerText=`${min}:${sec}:${ms}`;
-        },1);
+
+            localStorage.setItem("currentTime",`${min}:${sec}:${ms}`);
+        },16);
     }
     
     else if(element === pauseBtn){
@@ -73,14 +76,10 @@ function stopWatch(element){
         let sec = Math.floor((totalTime % (1000 * 60)) / 1000);
         let ms  = totalTime % 1000;
 
-        let displayTime = {
-            Minutes:min,
-            Seconds:sec,
-            Miliseconds:ms
-        };
-        localStorage.setItem(globalCounter,JSON.stringify(displayTime));
+        let data = localStorage.getItem("currentTime");
+        // document.querySelector(".flagList").innerText += `${globalCounter}  ${data}\n`;
         globalCounter ++;
-        console.log("time stored");
+        localStorage.setItem("counter", globalCounter);
     }
 
 }
