@@ -12,9 +12,58 @@ body {
 }
 
 .container {
-  margin-top: 3rem;;
-  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:2rem;
+}
+.header-container{
+  width: 122rem;
+  box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.04); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-background{
+  display: flex;
+  width:105rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.home-icon{
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #333;
+  font-size: 0.7rem;
+}
+.github-icon{
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.heading{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.main-body{
   background-color: #ffe6f1;
+  width: 25rem;
   border-radius: 1rem;
   padding: 1.5rem 2rem ;
   display: flex;
@@ -23,7 +72,6 @@ body {
   box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
   gap:2rem;
 }
-
 .header {
   display: flex;
   justify-content: space-between;
