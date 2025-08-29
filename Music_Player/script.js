@@ -1,12 +1,18 @@
     const audio = document.querySelector('.audio');
     const audioList = ["songs/lonely.mp3", "songs/phonk.mp3", "songs/something.mp3"];
+    
+    const backgroundSongImage = document.querySelector('.song-image');
+    const images = ["images/lonely.jpg", "images/phonk.jpg", "images/something.png"];
     const songName =["Lonely", "Phonk Music", "Something Just Like This"];
     const singer =["Akon", "Phonk Music", "The Chainsmokers and Coldplay"];
-    const images = ["images/lonely.jpg", "images/phonk.jpg", "images/something.png"];
+    
+    const seekBar = document.querySelector(".song-loaded-bar");
+    
 
-    const songTitle = document.querySelector('.song-name');
-    const singerName = document.querySelector('.artist-name');
-    const backgroungSongImage = document.querySelector(".song-image");
+    const songTitle = document.querySelector(".song-name");
+    const singerName = document.querySelector(".artist-name");
+    
+
 
     const prevBtn = document.querySelector('.previous');
     const playBtn = document.querySelector('.play');
@@ -14,6 +20,8 @@
     const nextBtn = document.querySelector('.next');
 
     const buttons = document.querySelectorAll('.btn');
+
+    
 
 
     let songIndex = 1;
@@ -42,6 +50,16 @@
             
         });
     })
+
+
+    audio.addEventListener("timeupdate",()=>{
+        seekBar.max = audio.duration;
+        seekBar.value = audio.currentTime;
+    })
+    seekBar.addEventListener("input",()=>{
+        audio.currentTime = seekBar.value;
+    })
+
 
     function playSong(){
         audio.src = audioList[songIndex];
@@ -76,5 +94,5 @@
         singerName.innerText = `- ${singer[songIndex]}`;
     }
     function updateBackground(){
-        backgroungSongImage.style.backgroundImage = `url(${images[songIndex]})`;
+        backgroundSongImage.style.backgroundImage = `url(${images[songIndex]})`;
     }

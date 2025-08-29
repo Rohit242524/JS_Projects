@@ -94,6 +94,14 @@ body {
 .song-loaded{
     padding:1rem;
 }
+.song-loaded-bar{
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    background: #f15086;
+    cursor: pointer;
+}
 .functions-container{
     display: flex;
     gap:1.5rem;
