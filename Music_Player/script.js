@@ -25,7 +25,7 @@
     const githubIcon = document.querySelector('.github-icon');
     
     githubIcon.addEventListener('click',()=>{
-        window.location.href = "https://github.com/Rohit242524/JS_Projects";
+        window.location.href = "https://github.com/Rohit242524/JS_Projects/tree/master/Music%20Player";
     })
     homeIcon.addEventListener('click', () => {
         window.location.href = '/'; 

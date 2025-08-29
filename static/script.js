@@ -23,12 +23,18 @@ for (const icon of icons) {
 
 const switchDark = document.querySelector(".nightMode-container");
 
-console.log(switchDark.classList);
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("night-mode");
+    switchDark.classList.add("night-mode"); 
+  } else {
+    document.body.classList.remove("night-mode");
+    switchDark.classList.remove("night-mode");
+  }
 
 switchDark.addEventListener("click",()=>{
-  switchDark.classList.toggle(".night-mode");
-  
-  if(switchDark.classList.contains(".night-mode")){
+  switchDark.classList.toggle("night-mode");
+
+  if(switchDark.classList.contains("night-mode")){
     localStorage.setItem("theme","dark");
   }else{
     localStorage.setItem("theme","light");
