@@ -28,11 +28,13 @@ This is a web-based currency converter application built with HTML, JavaScript, 
 - The application updates country flags dynamically based on the selected currencies.
 
 ### Folder Structure
+```
 CurrencyConverter/
 ├── index.html
 ├── script.js
 ├── country.js
 └── styles.css
+```
 
 ## Features
 - **HTML**: Provides a structured interface with input for amount, dropdowns for currency selection, and a conversion result display.
