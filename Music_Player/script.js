@@ -73,11 +73,13 @@
         audio.currentTime = seekBar.value;
     })
 
+    
 
     function playSong(){
         audio.src = audioList[songIndex];
         audio.play();
     }
+
     function nextSong(){
         songIndex++;
         if(songIndex>=audioList.length){
@@ -87,6 +89,13 @@
         audio.play();
 
     }
+    audio.addEventListener("ended",()=>{
+        nextSong();
+        updateName();
+        changePlayPause();
+        updateBackground();
+    });
+
     function prevSong(){
         songIndex--;
         if(songIndex<0){
