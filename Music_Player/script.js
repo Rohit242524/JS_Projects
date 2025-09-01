@@ -116,3 +116,22 @@
     function updateBackground(){
         backgroundSongImage.style.backgroundImage = `url(${images[songIndex]})`;
     }
+
+    const displayTime = document.querySelector(".song-played");
+    const displayTotalTime = document.querySelector(".song-duration");
+    audio.addEventListener("loadedmetadata", ()=>{
+        let totalTime = audio.duration ;
+        let m = Math.floor(totalTime/60);
+        let s = Math.floor(totalTime%60);
+        m = m < 10? '0' + m : m;
+        s = s < 10 ? '0' + s : s;  
+        displayTotalTime.innerText = `${m}:${s}`; 
+    });
+    setInterval(()=>{
+        let m = Math.floor(audio.currentTime / 60);
+        let s = Math.floor(audio.currentTime % 60);
+        s = s < 10 ? '0' + s : s;
+        m = m < 10 ? '0' + m : m;
+        displayTime.innerText = `${m}:${s}`;
+    },1000);
+    

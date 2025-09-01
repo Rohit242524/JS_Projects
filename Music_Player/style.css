@@ -141,6 +141,13 @@ body {
 
 .song-loaded{
     padding:1rem;
+    display: flex;
+    align-items: center;
+    gap:0.5rem;
+}
+.song-played, .song-duration{ 
+  font-size: 0.8rem;
+  color:#3c2f2f;
 }
 .song-loaded-bar{
     appearance: none;
