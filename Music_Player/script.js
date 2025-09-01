@@ -36,9 +36,15 @@
     buttons.forEach(btn=>{
         btn.addEventListener('click',()=>{
             if(btn ===  playBtn){
-                playSong();
-                updateBackground();
-                updateName();
+                if(seekBar.value !==0){
+                    audio.play();
+                }else{
+                    playSong();
+                    updateBackground();
+                    updateName();
+                }
+                playBtn.style.display="none";
+                pauseBtn.style.display="flex";
             }else if(btn === pauseBtn){
                 audio.pause();
                 pauseBtn.style.display="none";
@@ -71,8 +77,6 @@
     function playSong(){
         audio.src = audioList[songIndex];
         audio.play();
-        playBtn.style.display="none";
-        pauseBtn.style.display="flex";
     }
     function nextSong(){
         songIndex++;
