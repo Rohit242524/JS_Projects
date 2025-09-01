@@ -7,10 +7,13 @@ const storeBtn = document.querySelector(".store");
 
 const allBtn = document.querySelectorAll(".btn");
 
+const storeFlag = document.querySelector(".flag-list");
+
 allBtn.forEach(element => {
     element.addEventListener("click",()=>{
         if(element === resetBtn){
             stopWatch(element) //function calling
+            storeFlag.innerHTML = "";
         }else if(element === playBtn){
             stopWatch(element);// function calling
         }else if(element === pauseBtn){
@@ -38,6 +41,7 @@ function stopWatch(element){
         console.log("timer reset",totalTime);
         localStorage.clear();
         time.innerText=`00:00:00`;
+        document.querySelector(".container").style.justifyContent = "center";
     }
     
     else if(element === playBtn){
@@ -65,21 +69,23 @@ function stopWatch(element){
         console.log("paused at", totalTime);
     }
     
+
+    
     else if(element === storeBtn){
-        // let min = totalTime/(1000*60);
-        // let sec = (min-floor(min)) * 60;
-        // let ms = (sec-floor(sec)) *1000 ;
-        // min = floor(min);
-        // sec = floor(sec);
 
-        let min = Math.floor(totalTime / (1000 * 60));
-        let sec = Math.floor((totalTime % (1000 * 60)) / 1000);
-        let ms  = totalTime % 1000;
+        let min = Math.floor(totalTime / 60);
+        let sec = Math.floor(totalTime % 60);
+        let ms  = Math.floor((totalTime % 1) * 1000);
 
-        let data = localStorage.getItem("currentTime");
-        // document.querySelector(".flagList").innerText += `${globalCounter}  ${data}\n`;
-        globalCounter ++;
-        localStorage.setItem("counter", globalCounter);
+        min = min < 10 ? '0' + min : min;
+        sec = sec < 10 ? '0' + sec : sec;
+        ms = ms < 100 ? (ms < 10 ? '00' + ms : '0' + ms) : ms;
+        
+        const list = document.createElement("li");
+        list.innerText = `${globalCounter} - ${min}:${sec}:${ms}`;
+        globalCounter++; 
+        document.querySelector(".container").style.justifyContent = "start";
+        storeFlag.prepend(list);
     }
 
 }

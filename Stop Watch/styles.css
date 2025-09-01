@@ -190,3 +190,22 @@ body{
     }
 
 }
+
+/* for storing */
+li {
+    font-size: 1.2rem;
+    color: #222;
+    background: rgba(255,255,255,0.85);
+    margin: 0.5rem 0;
+    padding: 0.7rem 1.2rem;
+    border-radius: 0.7rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    list-style: none;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+
+li:hover {
+    background: rgba(255,255,255,1);
+}
