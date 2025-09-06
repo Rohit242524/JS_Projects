@@ -44,19 +44,23 @@ if (storageTime !== 0) {
 
   playBtn.style.display = "none";
   pauseBtn.style.display = "flex";
-
-  intervalPlay = setInterval(() => {
-    totalTime = Date.now() - startTime;
-    let min = Math.floor(totalTime / (1000 * 60));
-    let sec = Math.floor((totalTime % (1000 * 60)) / 1000);
-    let ms = totalTime % 1000;
-    console.log(min);
-    time.innerText = `${min}:${sec}:${ms}`;
-    localStorage.setItem("currentTime", `${min}:${sec}:${ms}`);
-  }, 10);
+  intervalTime();
+  
 } else {
   startTime = 0;
 }
+
+function intervalTime(){
+    intervalPlay = setInterval(() => {
+        totalTime = Date.now() - startTime;
+        let min = Math.floor(totalTime / (1000 * 60));
+        let sec = Math.floor((totalTime % (1000 * 60)) / 1000);
+        let ms = totalTime % 1000;
+        console.log(min);
+        time.innerText = `${min}:${sec}:${ms}`;
+        localStorage.setItem("currentTime", `${min}:${sec}:${ms}`);
+    }, 10);
+}   
 
 function stopWatch(element) {
   if (element === resetBtn) {
@@ -73,21 +77,103 @@ function stopWatch(element) {
     pauseBtn.style.display = "flex";
 
     startTime = Date.now() - totalTime;
-    intervalPlay = setInterval(() => {
-      totalTime = Date.now() - startTime;
-      let min = Math.floor(totalTime / (1000 * 60));
-      let sec = Math.floor((totalTime % (1000 * 60)) / 1000);
-      let ms = totalTime % 1000;
-      time.innerText = `${min}:${sec}:${ms}`;
-      localStorage.setItem("currentTime", `${min}:${sec}:${ms}`);
-    }, 10);
+    intervalTime();
   } else if (element === pauseBtn) {
     playBtn.style.display = "flex";
     pauseBtn.style.display = "none";
     clearInterval(intervalPlay);
     console.log("paused at", totalTime);
   } else if (element === storeBtn) {
-    let min = Math.floor(totalTime / 60);
+    let min = Math.floor(totalTime / 60);const time = document.querySelector(".time");
+
+const resetBtn = document.querySelector(".reset");
+const playBtn = document.querySelector(".play");
+const pauseBtn = document.querySelector(".pause");
+const storeBtn = document.querySelector(".store");
+
+const allBtn = document.querySelectorAll(".btn");
+const storeFlag = document.querySelector(".flag-list");
+
+let globalCounter = 1;
+let startTime = 0;
+let intervalPlay;
+let totalTime = 0;
+
+let storageTime = localStorage.getItem("currentTime");
+
+// ✅ restore previous stopwatch time
+if (storageTime) {
+  time.innerText = storageTime;
+  let [min, sec, ms] = storageTime.split(":").map(Number);
+  totalTime = min * 60 * 1000 + sec * 1000 + ms;
+  startTime = Date.now() - totalTime;
+
+  playBtn.style.display = "none";
+  pauseBtn.style.display = "flex";
+  intervalTime();
+}
+
+allBtn.forEach((element) => {
+  element.addEventListener("click", () => stopWatch(element));
+});
+
+// ------------------ Common Helpers ------------------
+function formatTime(ms) {
+  let min = Math.floor(ms / 60000);
+  let sec = Math.floor((ms % 60000) / 1000);
+  let milli = ms % 1000;
+
+  min = min < 10 ? "0" + min : min;
+  sec = sec < 10 ? "0" + sec : sec;
+  milli = milli.toString().padStart(3, "0");
+
+  return `${min}:${sec}:${milli}`;
+}
+
+function intervalTime() {
+  clearInterval(intervalPlay);
+  intervalPlay = setInterval(() => {
+    totalTime = Date.now() - startTime;
+    let formatted = formatTime(totalTime);
+    time.innerText = formatted;
+    localStorage.setItem("currentTime", formatted);
+  }, 10);
+}
+
+// ------------------ Stopwatch Logic ------------------
+function stopWatch(element) {
+  if (element === resetBtn) {
+    playBtn.style.display = "flex";
+    pauseBtn.style.display = "none";
+    clearInterval(intervalPlay);
+    totalTime = 0;
+    localStorage.clear();
+    time.innerText = "00:00:000";
+    storeFlag.innerHTML = "";
+    globalCounter = 1;
+    document.querySelector(".container").style.justifyContent = "center";
+
+  } else if (element === playBtn) {
+    playBtn.style.display = "none";
+    pauseBtn.style.display = "flex";
+    startTime = Date.now() - totalTime;
+    intervalTime();
+
+  } else if (element === pauseBtn) {
+    playBtn.style.display = "flex";
+    pauseBtn.style.display = "none";
+    clearInterval(intervalPlay);
+
+  } else if (element === storeBtn) {
+    let formatted = formatTime(totalTime);
+    const list = document.createElement("li");
+    list.innerText = `${globalCounter} - ${formatted}`;
+    globalCounter++;
+    document.querySelector(".container").style.justifyContent = "start";
+    storeFlag.prepend(list);
+  }
+}
+
     let sec = Math.floor(totalTime % 60);
     let ms = Math.floor((totalTime % 1) * 1000);
 
